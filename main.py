@@ -13,12 +13,12 @@ from dmm_interface import DMM
 from utils import samples_to_single_measurment, make_data_label
 
 # Setup
-K_0 = 0.001166523203898 # V
-K_1 = 1208.2014159962976 # V / kg
+K_0 = 0 # V
+K_1 = 1215.9161379870343 # V / kg
 
-hotend_temprature = 210 # deg C
+hotend_temprature = 230 # deg C
 
-flow_rates = np.linspace(2, 12, 5) # mm^3 / s
+flow_rates = np.linspace(5, 20, 7) # mm^3 / s
 extrusion_time = 5 # s
 sample_frequency = 1000 # Hz
 
@@ -30,7 +30,7 @@ calibration_masses = [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1] # kg
 
 max_load_cell_mass = 10 # kg
 load_cell_constant = 1.0 # mV / V
-excitation_voltage = 9.99 # V
+excitation_voltage = 10.00 # V
 
 K_1_guess = (max_load_cell_mass * 1000) / (load_cell_constant * excitation_voltage) # kg / V
 

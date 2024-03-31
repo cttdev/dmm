@@ -73,19 +73,19 @@ flow_rates = str2double(data_dir);
 %         ax = gca;
 %         masks(i, j, :) = ax.Children.BrushData;
 % 
-%         % Plot the masked region
-%         brush off
-%         mask = logical(squeeze(masks(i, j, :)));
-%         plot(times(mask), forces(mask) - zero_offset)
-%         xlabel("Time (s)")
-%         ylabel("Extrusion Force (kg)")
-% 
-%         % Wait for user to confrim mask
-%         while true
-%             if waitforbuttonpress == 1
-%                 break
-%             end
-%         end
+%         % % Plot the masked region
+%         % brush off
+%         % mask = logical(squeeze(masks(i, j, :)));
+%         % plot(times(mask), forces(mask) - zero_offset)
+%         % xlabel("Time (s)")
+%         % ylabel("Extrusion Force (kg)")
+%         % 
+%         % % Wait for user to confrim mask
+%         % while true
+%         %     if waitforbuttonpress == 1
+%         %         break
+%         %     end
+%         % end
 %     end
 % end
 
