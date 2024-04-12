@@ -1,9 +1,9 @@
 close all;
 
 masses = [0.01 0.02 0.05 0.1  0.2  0.5  1.  ]; % kg
-voltages = [0.00118558 0.00119486 0.00121794 0.00125565 0.00133397 0.0015852 0.00199085]; % V
+voltages = [0.00129429 0.00129966 0.0013229  0.00136356 0.00144398 0.00169639 0.00211873]; % V
 
-wire_offset = 0.0011672594488293; % V
+wire_offset = 0.0012904472817207; % V
 
 voltages_tf = (voltages - wire_offset)';
 masses_tf = masses';
@@ -14,9 +14,9 @@ f = fit(voltages_tf, masses_tf, linear, "StartPoint", 1);
 
 % Extract the params and 95% CI
 conf_level = 0.95;
-params = coeffvalues(f);
+params = coeffvalues(f)
 ci = confint(f, conf_level);
-uncertainty = diff(ci) / 2;
+uncertainty = diff(ci) / 2
 
 % Compute the domain for the fit line
 x_fit = linspace(min(voltages_tf), max(voltages_tf), 100);
@@ -37,11 +37,11 @@ hf.FaceColor = "#0072BD";
 hf.EdgeColor = "none";
 hold on
 
-plot(x_fit, f(x_fit), "Color", "#0072BD", "DisplayName", "Linear Fit: a * x; a = (1208 ± 25) kg/V")
+plot(x_fit, f(x_fit), "Color", "#0072BD", "DisplayName", "Linear Fit: a * x; a = (1216 ± 26) kg/V")
 plot(voltages_tf, masses_tf, "o", "Color", "#0072BD", "DisplayName", "Data")
 
-legend()
-title("Calibration Data and Fit")
+% legend()
+title("Strain Gauge Calibration")
 xlabel("Voltage (V)")
 ylabel("Mass (kg)")
 improvePlot
