@@ -18,7 +18,7 @@ K_1 = 1215.9161379870343 # V / kg
 
 hotend_temprature = 230 # deg C
 
-flow_rates = np.linspace(5, 20, 7) # mm^3 / s
+flow_rates = np.linspace(5, 35, 5) # mm^3 / s
 extrusion_time = 5 # s
 sample_frequency = 1000 # Hz
 
